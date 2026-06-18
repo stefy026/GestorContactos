@@ -13,7 +13,6 @@ namespace GestorContactos
         private int contadorId;
         private const string ARCHIVO_DATOS = "contactos.txt";
 
-        // Constructor
         public GestorContactos()
         {
             listaContactos = new List<Contacto>();
@@ -21,12 +20,9 @@ namespace GestorContactos
             CargarContactos();
         }
 
-       
-        // Agregar un nuevo contacto a la lista
 
         public void AgregarContacto(string nombre, string telefono, string email, string direccion)
         {
-            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(nombre))
             {
                 throw new ArgumentException("El nombre no puede estar vacío");
@@ -44,7 +40,6 @@ namespace GestorContactos
             Console.WriteLine("\n ✓ Contacto agregado exitosamente!");
         }
 
-        // Lista de todos los contactos
       
         public void ListarContactos()
         {
@@ -62,8 +57,6 @@ namespace GestorContactos
             Console.WriteLine($"\nTotal de contactos: {listaContactos.Count}");
         }
 
-        // Busca contactos por nombre
-        
         public void BuscarContacto(string nombreBuscar)
         {
             var resultados = listaContactos
@@ -83,8 +76,6 @@ namespace GestorContactos
             }
         }
 
-      
-        // Editar un contacto existente
      
         public void EditarContacto(int id)
         {
@@ -125,8 +116,6 @@ namespace GestorContactos
             Console.WriteLine("\n✓ Contacto actualizado exitosamente!");
         }
 
-        /// Elimina un contacto por ID
-    
         public void EliminarContacto(int id)
         {
             Contacto contacto = listaContactos.FirstOrDefault(c => c.Id == id);
@@ -152,9 +141,6 @@ namespace GestorContactos
                 Console.WriteLine("\n Operación cancelada.");
             }
         }
-
-      
-        // Guarda los contactos en un archivo de texto
        
         private void GuardarContactos()
         {
@@ -173,9 +159,6 @@ namespace GestorContactos
                 Console.WriteLine($"\n Error al guardar: {ex.Message}");
             }
         }
-
- 
-        // Aqui se cargan los contactos desde un archivo de texto
   
         private void CargarContactos()
         {
@@ -200,7 +183,6 @@ namespace GestorContactos
                             };
                             listaContactos.Add(contacto);
 
-                            // Aqui se puede actualizar el contador de ID
                             if (contacto.Id >= contadorId)
                                 contadorId = contacto.Id + 1;
                         }

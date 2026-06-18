@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace GestorContactos
 {
   
-    /// La Clase principal del programa es la Interfaz de usuario
-   
     public class Program
     {
         static void Main(string[] args)
@@ -59,8 +57,6 @@ namespace GestorContactos
         }
 
       
-        /// Mostramos el mensaje de bienvenida
-      
         static void MostrarBienvenida()
         {
             Console.Clear();
@@ -76,7 +72,6 @@ namespace GestorContactos
             Console.ReadKey();
         }
 
-        /// Mostramos el menú principal
        
         static void MostrarMenu()
         {
@@ -98,8 +93,6 @@ namespace GestorContactos
             Console.Write("\n Seleccione una opción: ");
         }
 
-        
-        /// Método para agregar un nuevo contacto
   
         static void AgregarNuevoContacto(GestorContactos gestor)
         {
@@ -135,8 +128,6 @@ namespace GestorContactos
                 Console.WriteLine($"\n Error inesperado: {ex.Message}");
             }
         }
-       
-        /// Método para buscar contactos
       
         static void BuscarContacto(GestorContactos gestor)
         {
@@ -152,8 +143,6 @@ namespace GestorContactos
 
             gestor.BuscarContacto(nombre);
         }
-
-        /// Método para editar un contacto
       
         static void EditarContacto(GestorContactos gestor)
         {
@@ -181,8 +170,6 @@ namespace GestorContactos
             }
         }
 
-        /// Método para eliminar un contacto
-    
         static void EliminarContacto(GestorContactos gestor)
         {
             Console.Clear();
@@ -209,7 +196,6 @@ namespace GestorContactos
             }
         }
 
-        //Mostramos el mensaje de despedida
         static void MostrarDespedida()
         {
             Console.Clear();
